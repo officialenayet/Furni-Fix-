@@ -374,13 +374,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero-img-glow {
   position: absolute;
-  width: 120%; height: 120%;
+  width: 90%; height: 90%;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   background: hsla(40,70%,45%,0.12);
   border-radius: 50%;
   filter: blur(60px);
   z-index: 0;
+  pointer-events: none;
 }
 .hero-img-card {
   position: relative; z-index: 1;
@@ -625,7 +626,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 8px 24px hsla(25,45%,25%,0.35);
 }
 
-/* ── WHY US ───────────────────────────────────────────────── */
+/* ── WHY US ─────────────────────────────a(�─────────────────── */
 #why-us {
   padding: 6rem 0;
   background: var(--primary);
@@ -1131,14 +1132,21 @@ footer {
   .test-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ── TABLET: hide hero image & scroll indicator to prevent overlap ── */
+@media (max-width: 960px) {
+  .hero-img-wrap { display: none; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-proof { justify-content: center; }
+  .hero-btns { justify-content: center; }
+  .scroll-indicator { display: none; }
+}
+
 @media (max-width: 768px) {
   .nav-links, .btn-nav-cta { display: none; }
   .hamburger { display: flex; }
-
-  .hero-inner { grid-template-columns: 1fr; text-align: center; }
-  .hero-img-wrap { display: none; }
-  .hero-proof { justify-content: center; }
-  .hero-btns { justify-content: center; }
 
   .about-grid { grid-template-columns: 1fr; }
   .experience-badge { right: 1rem; bottom: -1.5rem; }
@@ -1155,4 +1163,5 @@ footer {
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr; }
   .form-card { padding: 1.5rem; }
+  .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
 }
