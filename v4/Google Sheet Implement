@@ -1,0 +1,35 @@
+The code is all done. Now here's exactly what to do in Google Sheets to connect it:
+
+Step 1 — Open your Google Sheet, then go to Extensions → Apps Script
+
+Step 2 — Delete anything in the editor and paste this code:
+
+function doGet(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const p = e.parameter;
+  sheet.appendRow([
+    p.date,
+    p.time,
+    p.name,
+    p.phone,
+    p.furniture,
+    p.message
+  ]);
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: 'ok' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+Step 3 — Click Deploy → New deployment → choose "Web app"
+
+Description: Furni Fix Form
+Execute as: Me
+Who has access: Anyone
+Click Deploy and authorize it
+
+Step 4 — Copy the Web app URL (looks like https://script.google.com/macros/s/ABC.../exec)
+
+Step 5 — Open furnifix-html/script.js and replace line 13:
+
+const SHEET_URL = 'PASTE_YOUR_URL_HERE';
+
+Step 6 — Run
