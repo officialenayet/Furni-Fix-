@@ -7,7 +7,7 @@
 
 /* ── GOOGLE SHEETS URL ────────────────────────────────────── */
 /*  STEP: Paste your Apps Script deployment URL here           */
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxWy2HkLgFfQFJaboSPbIhM33105SGdmWOlr2rnq7xuGoYXV5GFb3ky5gZ0tUPF8dMhQA/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyalUaNeUoy3SyxidO3qsvXYGo7GPJOrmEb8-UIJ0i6GTNsvc6is5yb6zizuA4p11Ri/exec';
 
 
 /* ── HELPERS ─────────────────────────────────────────────── */
